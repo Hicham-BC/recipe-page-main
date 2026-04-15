@@ -1,0 +1,187 @@
+/* --------VARIABLES & SETUP-------- */
+:root {
+  /* ----Colors---- */
+
+  --stone-100: #f3e6d8;
+  --stone-150: #e4ded8;
+  --stone-600: #5f574e;
+  --stone-900: #302d2c;
+  --brown-800: #854632;
+  --rose-800: #7b284f;
+  --rose-50: #fff5fa;
+  --white: #ffffff;
+
+  /* Font */
+
+  --fluid-font-0: clamp(1rem, 1rem + 0vw, 1rem);
+  --fluid-font-1: clamp(1.2rem, 1.1532rem + 0.1998vw, 1.333rem);
+  --fluid-font-2: clamp(1.44rem, 1.3214rem + 0.5061vw, 1.7769rem);
+  --fluid-font-3: clamp(1.728rem, 1.341rem + 1.6513vw, 2.8271rem);
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf);
+  font-weight: 400;
+}
+
+/* --------RESET-------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------BASE-------- */
+body {
+  font-family: "Outfit", sans-serif ;
+  font-size: var(--fluid-font-0);
+  text-align: left;
+  color: var(--stone-600);
+  background-color: var(--stone-100);
+  padding: 6rem 1rem;
+  display: grid;
+  place-items: center;
+}
+
+/* GLOBAL & TYPOGRAPHY */
+
+h1, h2 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: var(--fluid-font-3);
+  color: var(--stone-900);
+}
+
+h2 {
+  font-size: var(--fluid-font-2);
+  color: var(--brown-800);
+}
+
+p {
+  line-height: 1.6;
+}
+
+span {
+  font-weight: 700;
+}
+
+ul {
+  list-style: disc;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+}
+
+ul li {
+  padding-left: 1rem;
+}
+
+ol {
+  list-style: decimal;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+}
+
+ol li {
+  padding-left: 1rem;
+}
+
+hr {
+  width: 70%;
+  border: none;
+  border-bottom: 5px dotted var(--stone-600);
+  margin: 2rem auto;
+}
+
+/* --------COMPONENTS-------- */
+
+.container {
+  max-width: 700px;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.header {
+  width: 100%;
+}
+
+.dish {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.card {
+  width: 100%;
+  background-color: var(--rose-50);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+}
+
+#prep-time_label {
+  color: var(--rose-800);
+  font-weight: 600;
+  font-size: var(--fluid-font-1);
+  margin-bottom: 0.5rem;
+}
+
+
+.prep-time li::marker {
+  color: var(--rose-800);
+}
+
+.ingredients li::marker, .instructions li::marker {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+.table-caption {
+  margin-bottom: 1rem;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrition-row:not(:last-child) {
+  border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition-label, .nutrition-value {
+  padding: 0.75rem 1.5rem;
+}
+
+.nutrition-value {
+  color: var(--brown-800);
+  font-weight: 600;
+}
+
+
+@media (max-width: 38rem) {
+  body {
+    padding: 0;
+  }
+  
+  .dish {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-top: -2rem;
+
+    width: calc(100% + 4rem);
+    border-radius: 0;
+  }
+}
